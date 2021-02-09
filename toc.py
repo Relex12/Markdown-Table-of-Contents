@@ -37,7 +37,7 @@ if __name__ == '__main__':
                     # brackets as link title, and the line between
                     # parenthesis after a # char, lowercased, without unwanted
                     # characters, as link value
-                    table_of_contents += (i-1)*'  '+'* ['+line[(i+1):-1]+'](#'+line[(i+1):-1].lower().replace(' ', '-').replace('?', '').replace('!', '')+')\n'
+                    table_of_contents += (i-1)*4*' '+'* ['+line[(i+1):-1]+'](#'+line[(i+1):-1].lower().replace(' ', '-').replace('?', '').replace('!', '')+')\n'
 
         # if a table of content tag is encountered
         if any([line.startswith(x) for x in toc_tag_list]):
