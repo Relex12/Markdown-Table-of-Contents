@@ -23,7 +23,7 @@ Regarder sur GitHub:
     * [Arguments pour la ligne de commande](#arguments-pour-la-ligne-de-commande)
     * [Spécifications](#spécifications)
     * [Fonctionnalités manquantes](#fonctionnalités-manquantes)
-    * [License](#license)
+    * [Licence](#licence)
 
 <!-- table of contents created by Adrian Bonnet, see https://Relex12.github.io/Markdown-Table-of-Contents for more -->
 
@@ -92,6 +92,6 @@ Seus les titres sous forme de dièses sont inclus dans la table des matières g�
 
 Aussi, la liste des comportements inattendus à cause des caractères spéciaux n'existe pas : si quelque chose d'étrange se produit, pensez d'abord aux caractères spéciaux.
 
-## License
+## Licence
 
 Ce projet est un petit projet. Le code source est donné librement à la communauté GitHub, sous la seule licence MIT, qui n'est pas trop restrictive.
