@@ -15,7 +15,17 @@ Regarder sur GitHub:
 
 ## Sommaire
 
-[toc]
+* [Markdown-Table-of-Contents](#markdown-table-of-contents)
+    * [Sommaire](#sommaire)
+    * [Qu'est-ce que c'est ?](#qu'est-ce-que-c'est-)
+    * [Comment ça marche ?](#comment-ça-marche-)
+    * [Comment l'utiliser ?](#comment-l'utiliser-)
+    * [Arguments pour la ligne de commande](#arguments-pour-la-ligne-de-commande)
+    * [Spécifications](#spécifications)
+    * [Fonctionnalités manquantes](#fonctionnalités-manquantes)
+    * [License](#license)
+
+<!-- table of contents created by Adrian Bonnet, see https://Relex12.github.io/Markdown-Table-of-Contents for more -->
 
 ## Qu'est-ce que c'est ?
 
