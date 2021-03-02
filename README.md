@@ -3,19 +3,27 @@ Python tool to compile hyperlinked Table of Contents into Markdown (GFM) files
 
 ![](https://img.shields.io/badge/status-In_Progress-green) ![](https://img.shields.io/github/license/Relex12/Markdown-Table-of-Contents) ![](https://img.shields.io/github/repo-size/Relex12/Markdown-Table-of-Contents) ![](https://img.shields.io/github/languages/top/Relex12/Markdown-Table-of-Contents) ![](https://img.shields.io/github/last-commit/Relex12/Markdown-Table-of-Contents) ![](https://img.shields.io/github/stars/Relex12/Markdown-Table-of-Contents)
 
+
+
+Check out on GitHub:
+
+[![Markdown-Table-of-Contents](https://github-readme-stats.vercel.app/api/pin/?username=Relex12&repo=Markdown-Table-of-Contents)](https://github.com/Relex12/Markdown-Table-of-Contents)
+
+[Read in French.](https://relex12.github.io/fr/Markdown-Table-of-Contents)
+
 ---
 
 ## Summary
 
-* [Markdown-Table-of-Contents](#Markdown-Table-of-Contents)
-  * [Summary](#Summary)
-  * [What is it?](#What-is-it)
-  * [How does it work?](#How-does-it-work)
-  * [How to use it?](#How-to-use-it)
-  * [CLI arguments](#CLI-arguments)
-  * [Specifications](#Specifications)
-  * [Incoming  upgrades](#Incoming--upgrades)
-  * [License](#License)
+* [Markdown-Table-of-Contents](#markdown-table-of-contents)
+    * [Summary](#summary)
+    * [What is it?](#what-is-it)
+    * [How does it work?](#how-does-it-work)
+    * [How to use it?](#how-to-use-it)
+    * [CLI arguments](#cli-arguments)
+    * [Specifications](#specifications)
+    * [Missing features](#missing-features)
+    * [License](#license)
 
 <!-- table of contents created by Adrian Bonnet, see https://github.com/Relex12/Markdown-Table-of-Contents for more -->
 
@@ -37,8 +45,8 @@ This behavior is already used by many Markdown editors (Typora, Markdown Monster
 
 **It's a 2 step procedure:**
 
-* first, install Markdown-Table-of-Contents by cloning the repo : `git clone https://github.com/Relex12/Markdown-Table-of-Contents.git`
-* then, run the script on your Markdown file : `python toc.py  FileName.md` (locations of `toc.py` and your file can be relative to the working directory or absolute)
+1. install Markdown-Table-of-Contents by cloning the repo : `git clone https://github.com/Relex12/Markdown-Table-of-Contents.git`
+2. run the script on your Markdown file : `python3 toc.py FileName.md` (locations of `toc.py` and your file can be relative to the working directory or absolute)
 
 ## CLI arguments
 
@@ -74,15 +82,15 @@ To be interpreted as a heading, a heading line **MUST** contain a white space (a
 
 The heading value is modified to be correctly interpreted by GitHub as a link-to-paragraph URL: space characters are replaced by dashes `-`, question marks `?` and exclamation marks `!` are removed and not replaced. You **SHOULD NOT** use white space characters different from space characters (such as tabulations) in a heading line. Some special characters such as sharps `#`, ampersands `&` and others **MAY** cause unexpected behaviors once uploaded on GitHub. White space characters (including space characters) right before end of line **MAY** also cause unexpected behaviors. If you find any of these behaviors, please open an issue.
 
-The indentation for the different list levels uses two space characters for each greater indent, starting from 0 space for headings level 1, 2 spaces for headings level 2, up to 12 spaces for headings level 6. After those spaces, there is a single asterisk `*` followed by a single space character and a bracket `[`. Up to the next bracket `]` is the heading line (every character from the heading line between the first white space and end of line excluded). After the bracket, a parenthesis `(` and a sharp `#`, then the modified heading line up to the final parenthesis `)`. As the end of line is removed from heading line, another end of line is added after the final parenthesis.
+The indentation for the different list levels uses four space characters for each greater indent, starting from 0 space for headings level 1, 4 spaces for headings level 2, up to 24 spaces for headings level 6. After those spaces, there is a single asterisk `*` followed by a single space character and a bracket `[`. Up to the next bracket `]` is the heading line (every character from the heading line between the first white space and end of line excluded). After the bracket, a parenthesis `(` and a sharp `#`, then the modified heading line up to the final parenthesis `)`. As the end of line is removed from heading line, another end of line is added after the final parenthesis.
 
 End of line are expected to be one character long, considered as LF (`\n`). That means only one character is removed at the end of heading lines before it is used as link title and modified as link value. However, it **MAY** work if you use CRLF end of lines. In the same way, only one LF character is inserted at the end of link lines in the generated TOC.
 
-## Incoming  upgrades
+## Missing features
 
-For the moment, only "sharps shaped" heading are included in the generated TOC, excluding equals `=`  and dashes `-` underline and HTML style tag such as `<h1>...</h1>`. The implementation should also consider sharps right before end of line as part of syntax and remove then. Many other specifications are supposed to be respected and are not for the moment. See Github-Flavored-Markdown specifications [here](https://github.github.com/gfm).
+Only "sharps shaped" heading are included in the generated TOC, excluding equals `=`  and dashes `-` underline style and HTML style tag such as `<h1>...</h1>`. The implementation should also consider sharps right before end of line as part of syntax and remove then. Many other specifications are supposed to be respected and are not. See Github-Flavored-Markdown specifications [here](https://github.github.com/gfm).
 
-Also, the exhaustive list of unexpected behaviors due to special characters must be done.
+Also, the exhaustive list of unexpected behaviors due to special characters doesn't exist: if something strange happens, think about special characters in the first place.
 
 ## License
 
