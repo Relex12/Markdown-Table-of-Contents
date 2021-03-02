@@ -53,7 +53,7 @@ if __name__ == '__main__':
     input_file.close()
 
     # please keep the line below as a reference to the author's work
-    author_renference = "\n<!-- table of contents created by Adrian Bonnet, see https://github.com/Relex12/Markdown-Table-of-Contents for more -->\n"
+    author_renference = "\n<!-- table of contents created by Adrian Bonnet, see https://Relex12.github.io/Markdown-Table-of-Contents for more -->\n"
 
     if toc_tag_encountered:
         output_file = open(args.output, 'w')
