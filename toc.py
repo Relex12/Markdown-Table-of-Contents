@@ -6,6 +6,7 @@ import argparse
 # list of possible table of contents tags
 toc_tag_list = ["[TOC]", "[[TOC]]", "[toc]", "[[toc]]"]
 
+escape_char_list = ['?', '!', '$', '`', ':']
 
 if __name__ == '__main__':
 
@@ -38,7 +39,11 @@ if __name__ == '__main__':
                     # brackets as link title, and the line between
                     # parenthesis after a # char, lowercased, without unwanted
                     # characters, as link value
-                    table_of_contents += (i-1)*4*' '+'* ['+line[(i+1):-1]+'](#'+line[(i+1):-1].lower().replace(' ', '-').replace('?', '').replace('!', '')+')\n'
+                    raw_new_toc_line = (i-1)*4*' '+'* ['+line[(i+1):-1]+']'
+                    sed_new_toc_line = '(#'+line[(i+1):-1].lower().replace(' ','-')+')\n'
+                    for char in escape_char_list:
+                        sed_new_toc_line = sed_new_toc_line.replace(char, '')
+                    table_of_contents += raw_new_toc_line+sed_new_toc_line
 
         # if a table of content tag is encountered
         if any([line.startswith(x) for x in toc_tag_list]):
