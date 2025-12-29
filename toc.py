@@ -6,7 +6,7 @@ import argparse
 # list of possible table of contents tags
 toc_tag_list = ["[TOC]", "[[TOC]]", "[toc]", "[[toc]]"]
 
-escape_char_list = ['?', '!', '$', '`', ':']
+escape_char_list = ["*", "(", ")", "'", '"', ",", ".", ":", ";", "!", "?", "/", "\\", "$", "`"]
 
 if __name__ == '__main__':
 
