@@ -20,6 +20,9 @@ if __name__ == '__main__':
     if not args.output:
         args.output = args.FileName
 
+    if not os.path.isfile(args.FileName):
+        parser.error("input file not found: '%s'" % args.FileName)
+
 
     input_file = open(args.FileName, 'r')
 
